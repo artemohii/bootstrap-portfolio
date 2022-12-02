@@ -1,0 +1,159 @@
+/* 
+h1 сделать уже чтоюбы текст после имеи перехожил на след страницу
+убрать горизонтаьныйц скролл
+сделать ссылки по середине li в наве
+
+не обязательно :
+прыгающая кнопка
+иконки в футере прыгают и меняют цвет
+сделать фавикон А в О */
+/* var */
+:root {
+    --font-main : 'Poppins', sans-serif;
+    --font-secondary : 'DM Sans', sans-serif;
+    --color-bg : #171718;
+    --fw-700 : 700;
+    --fw-500 : 500;
+    --fw-400 : 400;
+
+}
+/* reset */
+* {
+    box-sizing: border-box;
+    font-family: var(--font-main);
+}
+::-webkit-scrollbar {
+    width: 0;
+}
+body {
+    margin: 0;
+}
+ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+a {
+    text-decoration: none;
+    color: inherit;
+}
+a:hover {
+    color: inherit;
+}
+h1,p {
+    margin: 0;
+    cursor: default;
+}
+img {
+    width: 100%;
+}
+section {
+    min-height: 100vh;
+}
+
+/* home */
+.home {
+
+    height: 100vh;
+    background: var(--color-bg);
+}
+.header__logo {
+    font-size: 24px;
+    line-height: 100%;
+}
+.header__logo a {
+    font-weight: var(--fw-400);
+}
+.header__logo span {
+    font-weight: var(--fw-700) ;
+}
+.header__nav a {
+    padding-bottom: 6px;
+    border-bottom: 3px solid transparent ;
+    transition: .2s all ease-in-out;
+    font-weight: var(--fw-500);
+    font-size: 16px;
+    line-height: 24px;
+}
+.header__nav a:hover {
+    border-bottom: 3px solid #FFC107FF;
+}
+
+.home .row {
+    background: url(../img/abstract.png) center no-repeat;
+}
+.home .row h1{
+    font-family: var(--font-secondary);
+    font-weight: var(--fw-700);
+    font-size: 60px;
+    line-height: 140%;
+    letter-spacing: -0.5px;
+    color: #FAFAFA;
+}
+.home .row p {
+    font-family: var(--font-secondary);
+    font-weight: var(--fw-500);
+    font-size: 18px;
+    line-height: 24px;
+    letter-spacing: -0.5px;
+}
+.home .btn {
+    border-radius: 5px;
+    padding: 12px 28px;
+    font-family: var(--font-secondary);
+    font-weight: var(--fw-500);
+    font-size: 16px;
+    line-height: 24px;
+    letter-spacing: 0.15px;
+    transition: .2s all ease-in-out;
+}
+
+.home .btn:hover {
+    transform: translateY(-10px) ;
+    background: inherit;  
+}
+/* home end */
+
+/* projects */
+.projects h2{
+    cursor: default;
+    font-family: var(--font-secondary);
+    font-weight: var(--fw-700);
+    font-size: 60px;
+    line-height: 130%;
+    letter-spacing: -0.5px;
+}
+.card {
+    cursor: pointer;
+    box-shadow: 0px 5px 35px rgba(0, 0, 0, 0.25);
+    border-radius: 10px;
+}
+.card__text {
+    font-family: var(--font-secondary);
+    font-weight: var(--fw-700);
+    font-size: 24px;
+    line-height: 130%;
+    letter-spacing: -0.5px;
+    color: #171718;
+}
+/* projects end*/
+
+/* footer */
+.footer {
+    background: var(--color-bg);
+}
+.footer a {
+    transition: .2s all ease-in-out;
+}
+.footer a:hover{
+    transform: translateY(-10px) ;
+}
+.copy {
+    font-family: var(--font-secondary);
+    font-style: normal;
+    font-weight: var(--fw-400);
+    font-size: 16px;
+    line-height: 150%;
+    letter-spacing: -0.5px;
+}
+/* footer end*/
