@@ -1,12 +1,3 @@
-/* 
-h1 сделать уже чтоюбы текст после имеи перехожил на след страницу
-убрать горизонтаьныйц скролл
-сделать ссылки по середине li в наве
-
-не обязательно :
-прыгающая кнопка
-иконки в футере прыгают и меняют цвет
-сделать фавикон А в О */
 /* var */
 :root {
     --font-main : 'Poppins', sans-serif;
@@ -28,6 +19,9 @@ h1 сделать уже чтоюбы текст после имеи перех�
 body {
     margin: 0;
 }
+figure {
+    margin: 0;
+}
 ul {
     margin: 0;
     padding: 0;
@@ -46,6 +40,7 @@ h1,p {
 }
 img {
     width: 100%;
+    opacity: .8;
 }
 section {
     min-height: 100vh;
@@ -64,8 +59,12 @@ section {
 .header__logo a {
     font-weight: var(--fw-400);
 }
+.header__logo a:hover span {
+    color: #FFC107FF;
+}
 .header__logo span {
     font-weight: var(--fw-700) ;
+    transition: .2s all ease-in-out;
 }
 .header__nav a {
     padding-bottom: 6px;
@@ -81,6 +80,7 @@ section {
 
 .home .row {
     background: url(../img/abstract.png) center no-repeat;
+    --bs-gutter-x: 0;
 }
 .home .row h1{
     font-family: var(--font-secondary);
@@ -109,8 +109,23 @@ section {
 }
 
 .home .btn:hover {
+    /* 
     transform: translateY(-10px) ;
+     */
+    animation: btn-animation .8s forwards ease-in-out 2;
     background: inherit;  
+}
+@keyframes btn-animation {
+    0% {
+        transform: translateY(0px);
+    }
+    50% {
+        transform: translateY(-15px);
+    }
+    100% {
+        transform: translateY(0px);
+    }
+
 }
 /* home end */
 
@@ -127,6 +142,10 @@ section {
     cursor: pointer;
     box-shadow: 0px 5px 35px rgba(0, 0, 0, 0.25);
     border-radius: 10px;
+    transition: .2s all ease-in-out;
+}
+.card:hover img{
+    opacity: 1;
 }
 .card__text {
     font-family: var(--font-secondary);
@@ -147,8 +166,42 @@ section {
 }
 .footer a:hover{
     transform: translateY(-10px) ;
+} 
+/* 
+.footer .sprite {
+    width: 38px;
+    height: 38px;
+    background: url(../img/icons/css_sprites.png) no-repeat;
+} */
+.footer .social {
+    width: 38px;
+    height: 38px;
+}
+.footer a:first-of-type figure {
+    
+    background: url(../img/icons/gitHub.svg);
+}
+.footer .git:hover {
+    background: url(../img/icons/github-hover.svg);
+    background-size: cover;
+}
+.footer .inst {
+    background: url(../img/icons/instagram.svg);
+}
+.footer .inst:hover {
+    background: url(../img/icons/inst-hover.svg);
+    background-size: cover;
+}
+.footer .in {
+    border-radius: 10%;
+    background: url(../img/icons/linkedIn.svg);
+}
+.footer .in:hover {
+    background: url(../img/icons/linkedin-hover.svg.png);
+    background-size: cover;
 }
 .copy {
+    cursor: default;
     font-family: var(--font-secondary);
     font-style: normal;
     font-weight: var(--fw-400);
@@ -157,3 +210,10 @@ section {
     letter-spacing: -0.5px;
 }
 /* footer end*/
+
+@media (max-width: 450px) {
+    .home .row h1 {
+        font-size: 30px;
+    }
+    
+}
